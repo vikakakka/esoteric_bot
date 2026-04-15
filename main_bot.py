@@ -7,7 +7,7 @@ load_dotenv()
 TOKEN = os.getenv("BOT_TOKEN")
 bot = telebot.TeleBot(TOKEN)
 
-CHANNEL_ID = -1003369934081
+CHANNEL_ID = -1003896314325
 
 def get_all_cards():
     folder = "images/"
@@ -31,8 +31,6 @@ def send_card (chat_id, card_name, reply_to_message):
 @bot.message_handler(func = lambda message: True)
 def handle_message(message):
 
-    if message.chat.id != CHANNEL_ID:
-        return
     if not message.reply_to_message:
         return
     allowed_words = ["карта", "таро", "карту"]
